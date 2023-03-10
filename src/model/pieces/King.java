@@ -28,7 +28,7 @@ public class King extends ChessPiece {
                 new Position(currentPosition.getRank() - 1, currentPosition.getFile() - 1)
         ));
 
-        theoreticalMoves.removeIf(position -> Position.isOffBoard(position) || chessboard.isOccupiedByColor(position, color));
+        theoreticalMoves.removeIf(position -> !checkIfValidMove(position));
 
         return theoreticalMoves;
     }

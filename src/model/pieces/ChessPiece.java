@@ -8,12 +8,18 @@ import java.util.Collection;
 public abstract class ChessPiece {
 
     public enum Color {
-        WHITE, BLACK
+        WHITE, BLACK;
+
+        public Color getOppositeColor() {
+            return this == WHITE ? BLACK : WHITE;
+        }
     }
 
     protected final Color color;
 
     protected final ChessBoard chessboard;
+
+    boolean moved = false;
 
     public ChessPiece(ChessBoard chessboard, Color color) {
         this.chessboard = chessboard;
@@ -23,9 +29,8 @@ public abstract class ChessPiece {
     public void move(Position position) {
         if (this.getLegalMoves().contains(position)) {
             this.setPosition(position);
-        }
-        // Otherwise throw an exception
-        else {
+            this.moved = true;
+        } else {
             throw new IllegalArgumentException("Illegal move.");
         }
     }
@@ -35,6 +40,10 @@ public abstract class ChessPiece {
         Position previousPosition = chessboard.getPosition(this);
         chessboard.removePieceAtPosition(previousPosition);
         chessboard.setPieceAtPosition(this, position);
+    }
+
+    protected boolean checkIfValidMove(Position currentMove) {
+        return !Position.isOffBoard(currentMove) && !chessboard.isOccupiedByColor(currentMove, color);
     }
 
     abstract public String toString();

@@ -30,7 +30,7 @@ public class Knight extends ChessPiece {
 
         // Filter out theoretical moves that are not legal
         // (i.e. are off the board or are occupied by a piece of the same color)
-        theoreticalMoves.removeIf(position -> Position.isOffBoard(position) || chessboard.isOccupiedByColor(position, color));
+        theoreticalMoves.removeIf(position -> !checkIfValidMove(position));
 
         return theoreticalMoves;
     }

@@ -36,9 +36,12 @@ public class ChessBoard {
     public void setPieceAtPosition(ChessPiece piece, Position position) {
         boardRepresentation[position.getRank()][position.getFile()] = piece;
     }
+
+    public boolean isOccupied(Position position) {
+        return boardRepresentation[position.getRank()][position.getFile()] != null;
+    }
     public boolean isOccupiedByColor(Position position, ChessPiece.Color color) {
-        return boardRepresentation[position.getRank()][position.getFile()] != null
-                && boardRepresentation[position.getRank()][position.getFile()].getColor() == color;
+        return isOccupied(position) && boardRepresentation[position.getRank()][position.getFile()].getColor() == color;
     }
 
     @Override
