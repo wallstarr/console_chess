@@ -11,18 +11,8 @@ public class Bishop extends ChessPiece {
     }
 
     @Override
-    public void move(Position position) {
-
-    }
-
-    @Override
     public Collection<Position> getLegalMoves() {
         return null;
-    }
-
-    @Override
-    protected void setPosition(Position position) {
-
     }
 
     @Override

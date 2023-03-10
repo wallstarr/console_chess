@@ -3,7 +3,9 @@ package model.pieces;
 import model.ChessBoard;
 import model.Position;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class King extends ChessPiece {
     public King(ChessBoard chessboard, Color color) {
@@ -11,13 +13,24 @@ public class King extends ChessPiece {
     }
 
     @Override
-    public void move(Position position) {
-
-    }
-
-    @Override
     public Collection<Position> getLegalMoves() {
-        return null;
+        Position currentPosition = chessboard.getPosition(this);
+
+        // Kings can only move one square in any direction
+        List<Position> theoreticalMoves = new ArrayList<>(List.of(
+                new Position(currentPosition.getRank() + 1, currentPosition.getFile()),
+                new Position(currentPosition.getRank() - 1, currentPosition.getFile()),
+                new Position(currentPosition.getRank(), currentPosition.getFile() + 1),
+                new Position(currentPosition.getRank(), currentPosition.getFile() - 1),
+                new Position(currentPosition.getRank() + 1, currentPosition.getFile() + 1),
+                new Position(currentPosition.getRank() + 1, currentPosition.getFile() - 1),
+                new Position(currentPosition.getRank() - 1, currentPosition.getFile() + 1),
+                new Position(currentPosition.getRank() - 1, currentPosition.getFile() - 1)
+        ));
+
+        theoreticalMoves.removeIf(position -> Position.isOffBoard(position) || chessboard.isOccupiedByColor(position, color));
+
+        return theoreticalMoves;
     }
 
     @Override

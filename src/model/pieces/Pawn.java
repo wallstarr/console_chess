@@ -11,22 +11,8 @@ public class Pawn extends ChessPiece {
     }
 
     @Override
-    public void move(Position position) {
-        // Get legal moves for this piece
-        if (this.getLegalMoves().contains(position)) {
-            this.setPosition(position);
-        }
-
-    }
-
-    @Override
     public Collection<Position> getLegalMoves() {
         return null;
-    }
-
-    @Override
-    protected void setPosition(Position position) {
-
     }
 
     @Override
