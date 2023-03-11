@@ -16,7 +16,6 @@ public class Rook extends UnlimitedMovementPiece {
     public Collection<Position> getLegalMoves() {
         Position currentPosition = chessboard.getPosition(this);
 
-        // Rooks can only move in a straight line
         List<Position> theoreticalMoves = new ArrayList<>();
 
         getLegalMovesForRook(currentPosition, theoreticalMoves);
@@ -26,6 +25,6 @@ public class Rook extends UnlimitedMovementPiece {
 
     @Override
     public String toString() {
-        return "R";
+        return color == Color.WHITE ? "♜" : "♖";
     }
 }

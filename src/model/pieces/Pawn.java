@@ -29,7 +29,7 @@ public class Pawn extends ChessPiece {
             Position moveForwardTwoSquares = new Position(position.getRank() + (color == Color.WHITE ? 2 : -2), position.getFile());
 
             boolean pieceAtTwoSquares = chessboard.isOccupied(moveForwardTwoSquares);
-            if (!moved && !pieceAtTwoSquares) {
+            if (!hasMoved() && !pieceAtTwoSquares) {
                 theoreticalMoves.add(moveForwardTwoSquares);
             }
         }
@@ -53,6 +53,6 @@ public class Pawn extends ChessPiece {
 
     @Override
     public String toString() {
-        return "p";
+        return color == Color.WHITE ? "♟" : "♙";
     }
 }

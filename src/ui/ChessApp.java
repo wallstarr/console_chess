@@ -9,7 +9,7 @@ public class ChessApp {
     private static void runChessGame() {
 
         ChessGame chessGame = new ChessGame();
-        System.out.println("Let's play!");
+        System.out.println("\n        console_chess™\n");
         boolean gameNotFinished;
 
         do {

@@ -30,6 +30,6 @@ public class Queen extends UnlimitedMovementPiece {
 
     @Override
     public String toString() {
-        return "Q";
+        return color == Color.WHITE ? "♛" : "♕";
     }
 }

@@ -19,7 +19,7 @@ public abstract class ChessPiece {
 
     protected final ChessBoard chessboard;
 
-    boolean moved = false;
+    protected boolean moved = false;
 
     public ChessPiece(ChessBoard chessboard, Color color) {
         this.chessboard = chessboard;
@@ -52,5 +52,8 @@ public abstract class ChessPiece {
         return color;
     }
 
+    public boolean hasMoved() {
+        return moved;
+    }
 
 }

@@ -21,9 +21,13 @@ public class ChessGame {
 
     public boolean playerTakeTurn() {
 
-        printGame();
+        if (currentTurn == Color.WHITE) {
+            System.out.println(chessBoard);
+        } else {
+            System.out.println(chessBoard.toStringBlack());
+        }
 
-        System.out.println("It is " + currentTurn + "'s turn.");
+        System.out.println("\nIt is " + currentTurn + "'s turn.");
 
         try {
             // Ask for what position of the piece they want to move
@@ -42,6 +46,8 @@ public class ChessGame {
 
             // Get the piece at that position
             ChessPiece piece = chessBoard.getPiece(position);
+
+            System.out.println(piece.getLegalMoves());
 
             // Throw an error if the piece's color doesn't match the current turn
             if (piece.getColor() != currentTurn) {
@@ -73,9 +79,5 @@ public class ChessGame {
     private static String getUserInput() {
         String inputLine = scanner.nextLine();
         return inputLine.trim();
-    }
-
-    public void printGame() {
-        System.out.println(chessBoard);
     }
 }

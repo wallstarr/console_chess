@@ -26,6 +26,6 @@ public class Bishop extends UnlimitedMovementPiece {
 
     @Override
     public String toString() {
-        return "B";
+        return color == Color.WHITE ? "♝" : "♗";
     }
 }
