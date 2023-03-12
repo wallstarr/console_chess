@@ -115,17 +115,17 @@ public class ChessBoard {
         boardRepresentation[0][7] = new Rook(this, ChessPiece.Color.WHITE);
         boardRepresentation[7][7] = new Rook(this, ChessPiece.Color.BLACK);
 
-//        boardRepresentation[0][1] = new Knight(this, ChessPiece.Color.WHITE);
-//        boardRepresentation[0][6] = new Knight(this, ChessPiece.Color.WHITE);
+        boardRepresentation[0][1] = new Knight(this, ChessPiece.Color.WHITE);
+        boardRepresentation[0][6] = new Knight(this, ChessPiece.Color.WHITE);
         boardRepresentation[7][1] = new Knight(this, ChessPiece.Color.BLACK);
         boardRepresentation[7][6] = new Knight(this, ChessPiece.Color.BLACK);
 
-//        boardRepresentation[0][2] = new Bishop(this, ChessPiece.Color.WHITE);
-//        boardRepresentation[0][5] = new Bishop(this, ChessPiece.Color.WHITE);
+        boardRepresentation[0][2] = new Bishop(this, ChessPiece.Color.WHITE);
+        boardRepresentation[0][5] = new Bishop(this, ChessPiece.Color.WHITE);
         boardRepresentation[7][2] = new Bishop(this, ChessPiece.Color.BLACK);
         boardRepresentation[7][5] = new Bishop(this, ChessPiece.Color.BLACK);
 
-//        boardRepresentation[0][3] = new Queen(this, ChessPiece.Color.WHITE);
+        boardRepresentation[0][3] = new Queen(this, ChessPiece.Color.WHITE);
         boardRepresentation[7][3] = new Queen(this, ChessPiece.Color.BLACK);
 
         boardRepresentation[0][4] = new King(this, ChessPiece.Color.WHITE);
